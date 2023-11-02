@@ -1,17 +1,15 @@
-import path from 'path';
-
 const config = {
   entry: './src/index',
   resolve: {
     extensions: ['.js', '.jsx'],
   },
   output: {
-    path: path.resolve('/dist'),
+    path: '/dist',
     publicPath: '/',
     filename: 'bundle.js',
   },
   devServer: {
-    static: path.resolve('public'),
+    static: 'public',
   },
   module: {
     rules: [
