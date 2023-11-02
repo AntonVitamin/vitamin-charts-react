@@ -6,12 +6,12 @@ const x = {
   datasets: [
     {
       label: 'Data X',
-      values: [14, 25, 12, 22, 30, 27, 17],
+      data: [14, 25, 12, 22, 30, 27, 17],
       backgroundColor: '#5bc4fc',
     },
     {
       label: 'Data Y',
-      values: [20, 25, 15, 25, 30, 30, 20],
+      data: [20, 25, 15, 25, 30, 30, 20],
       backgroundColor: '#4343fa',
     },
   ],

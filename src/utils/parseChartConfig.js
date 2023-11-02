@@ -11,7 +11,7 @@ export const parseChartConfig = (chartConfig) => {
           backgroundColor: item.backgroundColor,
           borderColor: item.borderColor,
           borderWidth: item.borderWidth,
-          data: item.values,
+          data: item.data,
           label: item.label,
           order: item.order,
           type: item.type,

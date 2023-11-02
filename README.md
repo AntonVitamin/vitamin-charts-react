@@ -38,7 +38,7 @@ Since Chart.js is so flexible and offers so many customisable options, I opted f
     labels: string[],
     datasets: {
         label?: string,
-        values: number[],
+        data: number[],
         ... more optional
     }[],
     options?: {
