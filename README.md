@@ -30,7 +30,7 @@ This is a very custom approach and I've done what it makes sense to ME but of co
 
 ## Data Object
 
-Since Chart.js is so flexible and offers so many customisable options, I opted for reducing complexity so below there's an example of a the data object I'm proposing:
+Since Chart.js is so flexible and offers so many customisable options, I opted for reducing complexity but, atthe same time, tried to follow Chart.js data model convention as much as possible. Below there's an example of a the data object I'm proposing:
 
 ```
 {
