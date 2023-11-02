@@ -1,5 +1,5 @@
 import { BarChart, LineChart, PieChart } from '../components/Charts';
-import { parseChartConfig } from '../utils/chartsConfig';
+import { parseChartConfig } from '../utils/parseChartConfig';
 
 const renderChart = (chartConfig) => {
   const { type, data, options } = parseChartConfig(chartConfig);
