@@ -1,4 +1,3 @@
-import React from 'react';
 import ChartController from './controllers/ChartController';
 
 const x = {

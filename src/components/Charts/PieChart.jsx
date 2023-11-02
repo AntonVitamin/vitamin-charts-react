@@ -1,4 +1,3 @@
-import React from 'react';
 import { Chart, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 

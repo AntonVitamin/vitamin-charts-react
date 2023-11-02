@@ -1,4 +1,3 @@
-import React from 'react';
 import { BarChart, LineChart, PieChart } from '../components/Charts';
 import { parseChartConfig } from '../utils/chartsConfig';
 
