@@ -1,5 +1,9 @@
 # React Chart.js playground
 
+## Installation
+
+Run `npm i` `npm start` and you're good to go.
+
 ## Introduction
 
 This is a proposal on how to go about implementing [Chart.js](https://www.chartjs.org/docs/latest/) in a React application.
