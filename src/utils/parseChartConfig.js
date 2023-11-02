@@ -30,7 +30,6 @@ export const parseChartConfig = (chartConfig) => {
       }),
     },
     options: {
-      responsive: true,
       indexAxis: options?.horizontalDisplay ? 'y' : 'x',
       plugins: {
         title: {

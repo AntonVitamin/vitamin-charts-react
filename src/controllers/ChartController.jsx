@@ -14,7 +14,17 @@ const renderChart = (chartConfig) => {
 };
 
 const ChartController = ({ chartConfig }) => {
-  return <>{renderChart(chartConfig)}</>;
+  return (
+    <div
+      style={{
+        position: 'relative',
+        margin: 'auto',
+        width: '80vw',
+        height: '80vh',
+      }}>
+      {renderChart(chartConfig)}
+    </div>
+  );
 };
 
 export default ChartController;
