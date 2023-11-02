@@ -1,9 +1,11 @@
 export const parseChartConfig = (chartConfig) => {
+  const { type, labels, datasets, options } = chartConfig;
+
   return {
-    type: chartConfig.type,
+    type: type,
     data: {
-      labels: chartConfig.labels,
-      datasets: chartConfig.datasets.map((item) => {
+      labels: labels,
+      datasets: datasets.map((item) => {
         return {
           // generic
           backgroundColor: item.backgroundColor,
@@ -28,11 +30,12 @@ export const parseChartConfig = (chartConfig) => {
       }),
     },
     options: {
-      indexAxis: chartConfig.options?.horizontalDisplay ? 'y' : 'x',
+      responsive: true,
+      indexAxis: options?.horizontalDisplay ? 'y' : 'x',
       plugins: {
         title: {
-          display: chartConfig.options?.title ? true : false,
-          text: chartConfig.options?.title,
+          display: options?.title ? true : false,
+          text: options?.title,
         },
         // subtitle: {
         //   display: true,
@@ -43,14 +46,14 @@ export const parseChartConfig = (chartConfig) => {
         //   },
         // },
         legend: {
-          display: chartConfig.options?.legendPosition ? true : false,
-          position: chartConfig.options?.legendPosition,
+          display: options?.legendPosition ? true : false,
+          position: options?.legendPosition,
         },
         // tooltip: {
         //   // enabled: false,
         //   callbacks: {
         //     // adds info on the tooltip
-        //     footer: chartConfig.options?.tooltipFooter,
+        //     footer: options?.tooltipFooter,
         //   },
         // },
       },
@@ -65,7 +68,7 @@ export const parseChartConfig = (chartConfig) => {
           //     text: 'X Axis Title',
           //     align: 'end',
           //   },
-          stacked: chartConfig.options?.stacked ? true : false,
+          stacked: options?.stacked ? true : false,
         },
         y: {
           //   title: {
@@ -73,13 +76,13 @@ export const parseChartConfig = (chartConfig) => {
           //     text: 'Y Axis Title',
           //     align: 'start',
           //   },
-          stacked: chartConfig.options?.stacked ? true : false,
+          stacked: options?.stacked ? true : false,
         },
         // line
         y1: {
-          type: chartConfig.options?.isMultiAxis ? 'linear' : undefined,
-          display: chartConfig.options?.isMultiAxis ? true : false,
-          position: chartConfig.options?.isMultiAxis ? 'right' : undefined,
+          type: options?.isMultiAxis ? 'linear' : undefined,
+          display: options?.isMultiAxis ? true : false,
+          position: options?.isMultiAxis ? 'right' : undefined,
           grid: {
             drawOnChartArea: false, // only want the grid lines for one axis to show up
           },
