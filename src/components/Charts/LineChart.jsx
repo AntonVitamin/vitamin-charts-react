@@ -8,7 +8,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Line } from 'react-chartjs-2';
+import {Line} from 'react-chartjs-2';
 
 Chart.register(
   CategoryScale,
@@ -22,7 +22,7 @@ Chart.register(
 
 // TODO: defaults...
 
-const LineChart = ({ data, options }) => {
+const LineChart = ({data, options}) => {
   return <Line options={options} data={data} />;
 };
 

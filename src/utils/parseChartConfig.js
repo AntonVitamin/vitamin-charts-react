@@ -1,5 +1,5 @@
 export const parseChartConfig = (chartConfig) => {
-  const { type, labels, datasets, options } = chartConfig;
+  const {type, labels, datasets, options} = chartConfig;
 
   return {
     type: type,

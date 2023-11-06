@@ -1,8 +1,8 @@
-import { BarChart, LineChart, PieChart } from '../components/Charts';
-import { parseChartConfig } from '../utils/parseChartConfig';
+import {BarChart, LineChart, PieChart} from '../components/Charts';
+import {parseChartConfig} from '../utils/parseChartConfig';
 
 const renderChart = (chartConfig) => {
-  const { type, data, options } = parseChartConfig(chartConfig);
+  const {type, data, options} = parseChartConfig(chartConfig);
 
   const CHART_MAP = {
     bar: <BarChart data={data} options={options} />,
@@ -13,7 +13,7 @@ const renderChart = (chartConfig) => {
   return CHART_MAP[type];
 };
 
-const ChartController = ({ chartConfig }) => {
+const ChartController = ({chartConfig}) => {
   return (
     <div
       style={{
