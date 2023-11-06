@@ -23,10 +23,11 @@ Chart.register(
   Tooltip,
   Legend
 );
-setChartSharedDefaults(Chart, false);
-setChartBarDefaults(Chart);
 
-const BarChart = ({data, options}) => {
+const BarChart = ({data, options, isDarkMode}) => {
+  setChartSharedDefaults(Chart, isDarkMode);
+  setChartBarDefaults(Chart);
+
   return <Bar data={data} options={options} />;
 };
 

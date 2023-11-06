@@ -1,19 +1,19 @@
 import {BarChart, LineChart, PieChart} from '../components/Charts';
 import {parseChartConfig} from '../utils/parseChartConfig';
 
-const renderChart = (chartConfig) => {
+const renderChart = (chartConfig, isDarkMode) => {
   const {type, data, options} = parseChartConfig(chartConfig);
 
   const CHART_MAP = {
-    bar: <BarChart data={data} options={options} />,
-    line: <LineChart data={data} options={options} />,
-    pie: <PieChart data={data} options={options} />,
+    bar: <BarChart data={data} options={options} isDarkMode={isDarkMode} />,
+    line: <LineChart data={data} options={options} isDarkMode={isDarkMode} />,
+    pie: <PieChart data={data} options={options} isDarkMode={isDarkMode} />,
   };
 
   return CHART_MAP[type];
 };
 
-const ChartController = ({chartConfig}) => {
+const ChartController = ({chartConfig, isDarkMode}) => {
   return (
     <div
       style={{
@@ -22,7 +22,7 @@ const ChartController = ({chartConfig}) => {
         width: '80vw',
         height: '80vh',
       }}>
-      {renderChart(chartConfig)}
+      {renderChart(chartConfig, isDarkMode)}
     </div>
   );
 };

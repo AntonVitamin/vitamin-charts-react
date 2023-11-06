@@ -1,6 +1,6 @@
 import ChartController from './controllers/ChartController';
 
-const x = {
+const chartConfig = {
   type: 'bar',
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [
@@ -21,8 +21,14 @@ const x = {
   },
 };
 
+const isDarkMode = false;
+
 const App = () => {
-  return <ChartController chartConfig={x} />;
+  return (
+    <div style={{backgroundColor: isDarkMode ? '#2C2D33' : '#FFF'}}>
+      <ChartController chartConfig={chartConfig} isDarkMode={isDarkMode} />
+    </div>
+  );
 };
 
 export default App;
