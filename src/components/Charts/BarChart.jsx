@@ -4,14 +4,27 @@ import {
   LinearScale,
   BarElement,
   Title,
+  SubTitle,
   Tooltip,
   Legend,
 } from 'chart.js';
 import {Bar} from 'react-chartjs-2';
-import {setChartDefaults} from '../../utils/setChartDefaults';
+import {
+  setChartBarDefaults,
+  setChartSharedDefaults,
+} from '../../utils/setChartDefaults';
 
-Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
-setChartDefaults(Chart);
+Chart.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  SubTitle,
+  Tooltip,
+  Legend
+);
+setChartSharedDefaults(Chart, false);
+setChartBarDefaults(Chart);
 
 const BarChart = ({data, options}) => {
   return <Bar data={data} options={options} />;

@@ -1,3 +1,4 @@
+import {useEffect} from 'react';
 import {
   Chart,
   CategoryScale,
@@ -9,6 +10,10 @@ import {
   Legend,
 } from 'chart.js';
 import {Line} from 'react-chartjs-2';
+import {
+  setChartLineDefaults,
+  setChartSharedDefaults,
+} from '../../utils/setChartDefaults';
 
 Chart.register(
   CategoryScale,
@@ -19,8 +24,6 @@ Chart.register(
   Tooltip,
   Legend
 );
-
-// TODO: defaults...
 
 const LineChart = ({data, options}) => {
   return <Line options={options} data={data} />;
