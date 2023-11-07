@@ -13,7 +13,7 @@ import {Line} from 'react-chartjs-2';
 import {
   setChartLineDefaults,
   setChartSharedDefaults,
-} from '../../utils/charts/default-styles/setters/setChartDefaults';
+} from '../../utils/charts/default-styles/setters';
 
 Chart.register(
   CategoryScale,
