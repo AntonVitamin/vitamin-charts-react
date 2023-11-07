@@ -1,5 +1,5 @@
 import {BarChart, LineChart, PieChart} from '../components/Charts';
-import {parseChartConfig} from '../utils/parseChartConfig';
+import {parseChartConfig} from '../utils/charts/data-parsing/parseChartConfig';
 
 const renderChart = (chartConfig, isDarkMode) => {
   const {type, data, options} = parseChartConfig(chartConfig);
