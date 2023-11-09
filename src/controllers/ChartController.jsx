@@ -45,7 +45,9 @@ const ChartController = ({chartConfig, isDarkMode}) => {
         width: '80vw',
         height: '80vh',
       }}>
-      <h3 ref={titleRef}>{chartConfig.options?.title}</h3>
+      {chartConfig.options?.title && (
+        <h3 ref={titleRef}>{chartConfig.options.title}</h3>
+      )}
       {renderChart(chartConfig, isDarkMode)}
     </div>
   );
