@@ -38,7 +38,6 @@ const ChartController = ({chartConfig, isDarkMode}) => {
 
   return (
     <div
-      id="chart-container"
       ref={containerRef}
       style={{
         position: 'relative',
@@ -46,9 +45,7 @@ const ChartController = ({chartConfig, isDarkMode}) => {
         width: '80vw',
         height: '80vh',
       }}>
-      <h3 id="chart-title" ref={titleRef}>
-        {chartConfig.options?.title}
-      </h3>
+      <h3 ref={titleRef}>{chartConfig.options?.title}</h3>
       {renderChart(chartConfig, isDarkMode)}
     </div>
   );
