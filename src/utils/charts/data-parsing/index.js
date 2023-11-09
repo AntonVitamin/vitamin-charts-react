@@ -33,17 +33,6 @@ export const parseChartConfig = (chartConfig) => {
       maintainAspectRatio: true,
       indexAxis: options?.horizontalDisplay ? 'y' : 'x',
       plugins: {
-        title: {
-          display: options?.title ? true : false,
-          text: options?.title,
-        },
-        subtitle: {
-          display: true,
-          text: 'Chart Subtitle',
-          padding: {
-            bottom: 50,
-          },
-        },
         legend: {
           display: options?.legendPosition ? true : false,
           position: options?.legendPosition,
