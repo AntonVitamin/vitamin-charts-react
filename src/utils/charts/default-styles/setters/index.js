@@ -1,11 +1,11 @@
-import {lightColourPalette, darkColourPalette} from '../data';
+import {lightThemePalette, darkThemePalette, defaultFonts} from '../data';
 
 export const setChartBarDefaults = (chartInterface) => {
   // colours
   chartInterface.defaults.elements.bar.borderColor =
-    darkColourPalette.bar.border;
+    darkThemePalette.bar.border;
   chartInterface.defaults.elements.bar.backgroundColor =
-    darkColourPalette.bar.background;
+    darkThemePalette.bar.background;
 
   // alignment
   chartInterface.defaults.elements.bar.borderWidth = 2;
@@ -13,21 +13,21 @@ export const setChartBarDefaults = (chartInterface) => {
 
 export const setChartSharedDefaults = (chartInterface, isDarkMode) => {
   if (isDarkMode) {
-    chartInterface.defaults.color = darkColourPalette.generic.labels;
-    chartInterface.defaults.borderColor = darkColourPalette.generic.borders;
+    chartInterface.defaults.color = darkThemePalette.generic.labels;
+    chartInterface.defaults.borderColor = darkThemePalette.generic.borders;
     chartInterface.defaults.plugins.title.color =
-      darkColourPalette.generic.titles.main;
+      darkThemePalette.generic.titles.main;
     chartInterface.defaults.plugins.subtitle.color =
-      darkColourPalette.generic.titles.secondary;
+      darkThemePalette.generic.titles.secondary;
     // ...extend
   } else {
     // colours
-    chartInterface.defaults.color = lightColourPalette.generic.labels;
-    chartInterface.defaults.borderColor = lightColourPalette.generic.borders;
+    chartInterface.defaults.color = lightThemePalette.generic.labels;
+    chartInterface.defaults.borderColor = lightThemePalette.generic.borders;
     chartInterface.defaults.plugins.title.color =
-      lightColourPalette.generic.titles.main;
+      lightThemePalette.generic.titles.main;
     chartInterface.defaults.plugins.subtitle.color =
-      lightColourPalette.generic.titles.secondary;
+      lightThemePalette.generic.titles.secondary;
   }
 
   // alignment
@@ -35,8 +35,15 @@ export const setChartSharedDefaults = (chartInterface, isDarkMode) => {
   chartInterface.defaults.plugins.subtitle.align = 'start';
 
   // fonts
-  chartInterface.defaults.plugins.title.font = {size: 24};
-  chartInterface.defaults.plugins.subtitle.font = {style: 'italic'};
+  chartInterface.defaults.plugins.title.font = {
+    size: defaultFonts.title.size,
+  };
+  chartInterface.defaults.plugins.subtitle.font = {
+    style: defaultFonts.subtitle.style,
+  };
+
+  // legend
+  chartInterface.defaults.plugins.legend.labels.usePointStyle = true;
 
   return chartInterface;
 };

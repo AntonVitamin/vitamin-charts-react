@@ -30,11 +30,15 @@ export const parseChartConfig = (chartConfig) => {
       }),
     },
     options: {
+      maintainAspectRatio: true,
       indexAxis: options?.horizontalDisplay ? 'y' : 'x',
       plugins: {
         title: {
           display: options?.title ? true : false,
           text: options?.title,
+          // font: {
+          //   size: window.innerWidth > 600 ? 100 : 20,
+          // },
         },
         subtitle: {
           display: true,
@@ -42,6 +46,9 @@ export const parseChartConfig = (chartConfig) => {
           padding: {
             bottom: 50,
           },
+          // font: {
+          //   size: 16,
+          // },
         },
         legend: {
           display: options?.legendPosition ? true : false,
