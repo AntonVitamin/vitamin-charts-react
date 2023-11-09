@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 
-export const ChartTitlesContainer = styled.div`
+export const MainContainer = styled.div`
+  position: relative;
+  margin: auto;
+  width: 80vw;
+  height: 80vh;
+`;
+
+export const TitlesContainer = styled.div`
   margin: 20px 0;
 `;
 
-export const ChartTitle = styled.h3`
+export const Title = styled.h3`
   display: flex;
   justify-content: start;
   align-items: center;
@@ -14,7 +21,7 @@ export const ChartTitle = styled.h3`
   margin: 0 0 10px 0;
 `;
 
-export const ChartSubtitle = styled.h5`
+export const Subtitle = styled.h5`
   display: flex;
   justify-content: start;
   align-items: center;

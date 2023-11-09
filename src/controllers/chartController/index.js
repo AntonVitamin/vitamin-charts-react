@@ -1,7 +1,7 @@
 import {useEffect, useRef} from 'react';
 import {BarChart, LineChart, PieChart} from '../../components/Charts';
 import {parseChartConfig} from '../../utils/charts/data-parsing';
-import {ChartTitle, ChartSubtitle, ChartTitlesContainer} from './styles';
+import {MainContainer, TitlesContainer, Title, Subtitle} from './styles';
 
 const renderChart = (chartConfig, isDarkMode) => {
   const {type, data, options} = parseChartConfig(chartConfig);
@@ -37,24 +37,17 @@ const ChartController = ({chartConfig, isDarkMode}) => {
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      style={{
-        position: 'relative',
-        margin: 'auto',
-        width: '80vw',
-        height: '80vh',
-      }}>
+    <MainContainer ref={containerRef}>
       {chartConfig.options?.title && (
-        <ChartTitlesContainer ref={titleRef}>
-          <ChartTitle>{chartConfig.options.title}</ChartTitle>
+        <TitlesContainer ref={titleRef}>
+          <Title>{chartConfig.options.title}</Title>
           {chartConfig.options?.subtitle && (
-            <ChartSubtitle>{chartConfig.options.subtitle}</ChartSubtitle>
+            <Subtitle>{chartConfig.options.subtitle}</Subtitle>
           )}
-        </ChartTitlesContainer>
+        </TitlesContainer>
       )}
       {renderChart(chartConfig, isDarkMode)}
-    </div>
+    </MainContainer>
   );
 };
 
