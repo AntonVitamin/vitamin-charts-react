@@ -19,17 +19,16 @@ const ChartController = ({chartConfig, isDarkMode}) => {
   const titleRef = useRef(null);
 
   useEffect(() => {
-    const parentElement = containerRef?.current;
-    const childElement = titleRef?.current;
+    const containerElement = containerRef?.current;
+    const titleElement = titleRef?.current;
 
-    if (!parentElement) return;
-    if (!childElement) return;
+    if (!containerElement || !titleElement) return;
 
     let resizeObserver = new ResizeObserver(() => {
-      childElement.style.fontSize = `${parentElement.clientWidth / 20}px`;
+      titleElement.style.fontSize = `${containerElement.clientWidth / 20}px`;
     });
 
-    resizeObserver.observe(parentElement);
+    resizeObserver.observe(containerElement);
 
     return () => {
       resizeObserver.disconnect();
@@ -46,7 +45,12 @@ const ChartController = ({chartConfig, isDarkMode}) => {
         height: '80vh',
       }}>
       {chartConfig.options?.title && (
-        <h3 ref={titleRef}>{chartConfig.options.title}</h3>
+        <div ref={titleRef}>
+          <h3>{chartConfig.options.title}</h3>
+          {chartConfig.options?.subtitle && (
+            <h5>{chartConfig.options.subtitle}</h5>
+          )}
+        </div>
       )}
       {renderChart(chartConfig, isDarkMode)}
     </div>

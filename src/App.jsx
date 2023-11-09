@@ -17,6 +17,7 @@ const chartConfig = {
   ],
   options: {
     title: 'Chart Title',
+    subtitle: 'xx',
     legendPosition: 'top',
   },
 };
