@@ -36,9 +36,6 @@ export const parseChartConfig = (chartConfig) => {
         title: {
           display: options?.title ? true : false,
           text: options?.title,
-          // font: {
-          //   size: window.innerWidth > 600 ? 100 : 20,
-          // },
         },
         subtitle: {
           display: true,
@@ -46,9 +43,6 @@ export const parseChartConfig = (chartConfig) => {
           padding: {
             bottom: 50,
           },
-          // font: {
-          //   size: 16,
-          // },
         },
         legend: {
           display: options?.legendPosition ? true : false,
@@ -74,6 +68,12 @@ export const parseChartConfig = (chartConfig) => {
           //     align: 'end',
           //   },
           stacked: options?.stacked ? true : false,
+          grid: {
+            drawTicks: false,
+          },
+          ticks: {
+            padding: 10,
+          },
         },
         y: {
           //   title: {
@@ -82,6 +82,12 @@ export const parseChartConfig = (chartConfig) => {
           //     align: 'start',
           //   },
           stacked: options?.stacked ? true : false,
+          grid: {
+            drawTicks: false,
+          },
+          ticks: {
+            padding: 10,
+          },
         },
         // line
         y1: {
