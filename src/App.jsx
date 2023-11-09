@@ -1,4 +1,4 @@
-import ChartController from './controllers/ChartController';
+import ChartController from './controllers/chartController';
 
 const chartConfig = {
   type: 'bar',
