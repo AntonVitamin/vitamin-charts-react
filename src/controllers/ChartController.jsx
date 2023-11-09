@@ -14,8 +14,7 @@ const renderChart = (chartConfig, isDarkMode) => {
   return CHART_MAP[type];
 };
 
-const ChartController = (props) => {
-  const {chartConfig, isDarkMode} = props;
+const ChartController = ({chartConfig, isDarkMode}) => {
   const containerRef = useRef(null);
   const titleRef = useRef(null);
 
