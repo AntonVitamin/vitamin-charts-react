@@ -42,7 +42,7 @@ const ChartController = ({chartConfig, isDarkMode}) => {
         </TitlesContainer>
       )}
       {renderChart(chartConfig, isDarkMode)}
-      <div id="legend-container"></div>
+      {chartConfig.options?.legendPosition && <div id="legend-container"></div>}
     </ChartContainer>
   );
 };
