@@ -1,5 +1,10 @@
 import {useEffect, useRef} from 'react';
-import {BarChart, LineChart, PieChart} from '../../components/Charts';
+import {
+  BarChart,
+  LineChart,
+  PieChart,
+  DoughnutChart,
+} from '../../components/Charts';
 import {parseChartConfig} from '../../utils/charts/data-parsing';
 import {ChartContainer, TitlesContainer, Title} from './styles';
 
@@ -10,6 +15,9 @@ const renderChart = (chartConfig, isDarkMode) => {
     bar: <BarChart chartConfig={parsedChartConfig} isDarkMode={isDarkMode} />,
     line: <LineChart chartConfig={parsedChartConfig} isDarkMode={isDarkMode} />,
     pie: <PieChart chartConfig={parsedChartConfig} isDarkMode={isDarkMode} />,
+    doughnut: (
+      <DoughnutChart chartConfig={parsedChartConfig} isDarkMode={isDarkMode} />
+    ),
   };
 
   return CHART_MAP[parsedChartConfig.type];

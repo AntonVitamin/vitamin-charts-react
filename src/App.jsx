@@ -1,7 +1,7 @@
 import ChartController from './controllers/chartController';
 
 const chartConfig = {
-  type: 'line',
+  type: 'doughnut',
   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [
     // {
@@ -18,7 +18,9 @@ const chartConfig = {
     },
   ],
   options: {
-    title: 'Chart Title',
+    titles: {
+      main: 'Chart Title',
+    },
     displayLegend: true,
   },
 };
