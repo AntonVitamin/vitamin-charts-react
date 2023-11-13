@@ -9,6 +9,7 @@ const renderChart = (chartConfig, isDarkMode) => {
   const CHART_MAP = {
     bar: <BarChart chartConfig={parsedChartConfig} isDarkMode={isDarkMode} />,
     line: <LineChart chartConfig={parsedChartConfig} isDarkMode={isDarkMode} />,
+    pie: <PieChart chartConfig={parsedChartConfig} isDarkMode={isDarkMode} />,
   };
 
   return CHART_MAP[parsedChartConfig.type];
