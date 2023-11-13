@@ -38,9 +38,11 @@ const ChartController = ({chartConfig, isDarkMode}) => {
 
   return (
     <ChartContainer ref={containerRef}>
-      {chartConfig.options?.title && (
+      {chartConfig.options?.titles.main && (
         <TitlesContainer ref={titleRef}>
-          <Title $isDarkMode={isDarkMode}>{chartConfig.options.title}</Title>
+          <Title $isDarkMode={isDarkMode}>
+            {chartConfig.options.titles.main}
+          </Title>
         </TitlesContainer>
       )}
       {renderChart(chartConfig, isDarkMode)}

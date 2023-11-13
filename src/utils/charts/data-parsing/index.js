@@ -57,11 +57,14 @@ export const parseChartConfig = (chartConfig) => {
       // },
       scales: {
         x: {
-          //   title: {
-          //     display: true,
-          //     text: 'X Axis Title',
-          //     align: 'end',
-          //   },
+          title: {
+            display: options?.titles.xAxis ? true : false,
+            text: options?.titles.xAxis,
+            align: 'center',
+            font: {
+              size: 16,
+            },
+          },
           stacked: options?.stacked ? true : false,
           grid: {
             drawTicks: false,
@@ -71,11 +74,14 @@ export const parseChartConfig = (chartConfig) => {
           },
         },
         y: {
-          //   title: {
-          //     display: true,
-          //     text: 'Y Axis Title',
-          //     align: 'start',
-          //   },
+          title: {
+            display: options?.titles.yAxis ? true : false,
+            text: options?.titles.yAxis,
+            align: 'center',
+            font: {
+              size: 16,
+            },
+          },
           stacked: options?.stacked ? true : false,
           grid: {
             drawTicks: false,
