@@ -8,6 +8,7 @@ const renderChart = (chartConfig, isDarkMode) => {
 
   const CHART_MAP = {
     bar: <BarChart chartConfig={parsedChartConfig} isDarkMode={isDarkMode} />,
+    line: <LineChart chartConfig={parsedChartConfig} isDarkMode={isDarkMode} />,
   };
 
   return CHART_MAP[parsedChartConfig.type];
@@ -42,7 +43,7 @@ const ChartController = ({chartConfig, isDarkMode}) => {
         </TitlesContainer>
       )}
       {renderChart(chartConfig, isDarkMode)}
-      {chartConfig.options?.legendPosition && <div id="legend-container"></div>}
+      {chartConfig.options?.displayLegend && <div id="legend-container"></div>}
     </ChartContainer>
   );
 };

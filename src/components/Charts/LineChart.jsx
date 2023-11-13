@@ -10,10 +10,7 @@ import {
   Legend,
 } from 'chart.js';
 import {Line} from 'react-chartjs-2';
-import {
-  setChartLineDefaults,
-  setChartSharedDefaults,
-} from '../../utils/charts/default-styles/setters';
+import {setChartSharedDefaults} from '../../utils/charts/default-styles/setters';
 
 Chart.register(
   CategoryScale,
@@ -25,8 +22,11 @@ Chart.register(
   Legend
 );
 
-const LineChart = ({data, options}) => {
-  return <Line options={options} data={data} />;
+const LineChart = ({chartConfig, isDarkMode}) => {
+  const {data, options, plugins} = chartConfig;
+  setChartSharedDefaults(Chart, isDarkMode);
+
+  return <Line data={data} options={options} plugins={plugins} />;
 };
 
 export default LineChart;

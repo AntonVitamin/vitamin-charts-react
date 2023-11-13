@@ -44,9 +44,9 @@ export const htmlLegendPlugin = {
       boxSpan.style.borderWidth = item.borderWidth + 'px';
       boxSpan.style.display = 'inline-block';
       boxSpan.style.flexShrink = 0;
-      boxSpan.style.height = '15px';
+      boxSpan.style.height = '10px';
       boxSpan.style.marginRight = '10px';
-      boxSpan.style.width = '15px';
+      boxSpan.style.width = '30px';
 
       // Text
       const textContainer = document.createElement('span');

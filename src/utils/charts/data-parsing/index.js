@@ -11,8 +11,10 @@ export const parseChartConfig = (chartConfig) => {
         return {
           // generic
           backgroundColor: item.backgroundColor,
+          // borderRadius: 3,
+          borderColor: item.borderColor,
+          borderWidth: item.borderWidth,
           borderRadius: 3,
-          borderWidth: 0,
           data: item.data,
           label: item.label,
           order: item.order,
@@ -36,8 +38,7 @@ export const parseChartConfig = (chartConfig) => {
       indexAxis: options?.horizontalDisplay ? 'y' : 'x',
       plugins: {
         legend: {
-          display: options?.legendPosition ? true : false,
-          position: options?.legendPosition,
+          display: false,
         },
         htmlLegend: {
           containerID: 'legend-container',
@@ -94,6 +95,6 @@ export const parseChartConfig = (chartConfig) => {
         },
       },
     },
-    plugins: [options?.legendPosition ? htmlLegendPlugin : false],
+    plugins: [options?.displayLegend ? htmlLegendPlugin : false],
   };
 };
