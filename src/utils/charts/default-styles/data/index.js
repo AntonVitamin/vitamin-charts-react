@@ -3,8 +3,7 @@ export const darkThemePalette = {
     labels: '#FFF',
     borders: '#4F4F4F',
     titles: {
-      main: '#828282',
-      secondary: '#FFF',
+      main: '#FFF',
     },
   },
   bar: {
@@ -19,7 +18,6 @@ export const lightThemePalette = {
     borders: '#D3D3D3',
     titles: {
       main: '#828282',
-      secondary: '#A8A8A8',
     },
   },
   bar: {

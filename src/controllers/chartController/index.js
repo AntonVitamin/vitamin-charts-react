@@ -1,18 +1,16 @@
 import {useEffect, useRef} from 'react';
 import {BarChart, LineChart, PieChart} from '../../components/Charts';
 import {parseChartConfig} from '../../utils/charts/data-parsing';
-import {MainContainer, TitlesContainer, Title, Subtitle} from './styles';
+import {ChartContainer, TitlesContainer, Title} from './styles';
 
 const renderChart = (chartConfig, isDarkMode) => {
-  const {type, data, options} = parseChartConfig(chartConfig);
+  const parsedChartConfig = parseChartConfig(chartConfig);
 
   const CHART_MAP = {
-    bar: <BarChart data={data} options={options} isDarkMode={isDarkMode} />,
-    line: <LineChart data={data} options={options} isDarkMode={isDarkMode} />,
-    pie: <PieChart data={data} options={options} isDarkMode={isDarkMode} />,
+    bar: <BarChart chartConfig={parsedChartConfig} isDarkMode={isDarkMode} />,
   };
 
-  return CHART_MAP[type];
+  return CHART_MAP[parsedChartConfig.type];
 };
 
 const ChartController = ({chartConfig, isDarkMode}) => {
@@ -37,17 +35,15 @@ const ChartController = ({chartConfig, isDarkMode}) => {
   }, []);
 
   return (
-    <MainContainer ref={containerRef}>
+    <ChartContainer ref={containerRef}>
       {chartConfig.options?.title && (
         <TitlesContainer ref={titleRef}>
-          <Title>{chartConfig.options.title}</Title>
-          {chartConfig.options?.subtitle && (
-            <Subtitle>{chartConfig.options.subtitle}</Subtitle>
-          )}
+          <Title $isDarkMode={isDarkMode}>{chartConfig.options.title}</Title>
         </TitlesContainer>
       )}
       {renderChart(chartConfig, isDarkMode)}
-    </MainContainer>
+      <div id="legend-container"></div>
+    </ChartContainer>
   );
 };
 

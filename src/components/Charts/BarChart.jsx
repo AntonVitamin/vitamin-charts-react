@@ -24,11 +24,12 @@ Chart.register(
   Legend
 );
 
-const BarChart = ({data, options, isDarkMode}) => {
+const BarChart = ({chartConfig, isDarkMode}) => {
+  const {data, options, plugins} = chartConfig;
   setChartSharedDefaults(Chart, isDarkMode);
   setChartBarDefaults(Chart);
 
-  return <Bar data={data} options={options} />;
+  return <Bar data={data} options={options} plugins={plugins} />;
 };
 
 export default BarChart;

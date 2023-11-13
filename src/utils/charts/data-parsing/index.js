@@ -1,3 +1,5 @@
+import {htmlLegendPlugin} from '../plugins';
+
 export const parseChartConfig = (chartConfig) => {
   const {type, labels, datasets, options} = chartConfig;
 
@@ -9,8 +11,8 @@ export const parseChartConfig = (chartConfig) => {
         return {
           // generic
           backgroundColor: item.backgroundColor,
-          borderColor: item.borderColor,
-          borderWidth: item.borderWidth,
+          borderRadius: 3,
+          borderWidth: 0,
           data: item.data,
           label: item.label,
           order: item.order,
@@ -36,6 +38,9 @@ export const parseChartConfig = (chartConfig) => {
         legend: {
           display: options?.legendPosition ? true : false,
           position: options?.legendPosition,
+        },
+        htmlLegend: {
+          containerID: 'legend-container',
         },
         // tooltip: {
         //   // enabled: false,
@@ -89,5 +94,6 @@ export const parseChartConfig = (chartConfig) => {
         },
       },
     },
+    plugins: [options?.legendPosition ? htmlLegendPlugin : false],
   };
 };

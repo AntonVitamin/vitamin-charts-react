@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MainContainer = styled.div`
+export const ChartContainer = styled.div`
   position: relative;
   margin: auto;
   width: 80vw;
@@ -17,7 +17,7 @@ export const Title = styled.h3`
   align-items: center;
   font-family: Helvetica;
   font-weight: 400;
-  color: #53565b;
+  color: ${({$isDarkMode}) => ($isDarkMode ? '#FFF' : '#53565b')};
   margin: 0 0 10px 0;
 `;
 

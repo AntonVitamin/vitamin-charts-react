@@ -17,12 +17,11 @@ const chartConfig = {
   ],
   options: {
     title: 'Chart Title',
-    subtitle: 'xx',
     legendPosition: 'top',
   },
 };
 
-const isDarkMode = false;
+const isDarkMode = true;
 
 const App = () => {
   return (
