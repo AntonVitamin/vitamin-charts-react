@@ -4,7 +4,7 @@ import {
   LineChart,
   PieChart,
   DoughnutChart,
-} from '../../components/Charts';
+} from '../../components/charts';
 import {parseChartConfig} from '../../utils/charts/data-parsing';
 import {ChartContainer, TitlesContainer, Title} from './styles';
 
