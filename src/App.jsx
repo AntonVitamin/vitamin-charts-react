@@ -1,4 +1,5 @@
 import ChartController from './controllers/chartController';
+import ProgressBar from './components/metrics/ProgressBar';
 
 const chartConfig = {
   type: 'doughnut',
@@ -40,6 +41,7 @@ const App = () => {
   return (
     <div style={{backgroundColor: isDarkMode ? '#2C2D33' : '#FFF'}}>
       <ChartController chartConfig={chartConfig} isDarkMode={isDarkMode} />
+      <ProgressBar />
     </div>
   );
 };
