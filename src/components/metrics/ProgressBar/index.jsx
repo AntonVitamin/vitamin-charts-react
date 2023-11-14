@@ -8,16 +8,16 @@ import {
   BackgroundDiv,
 } from './styles';
 
-const ProgressBar = () => {
+const ProgressBar = ({percentage, color, isDarkMode}) => {
   return (
     <MainContainer>
-      <TitleContainer>
+      <TitleContainer $isDarkMode={isDarkMode}>
         <span>Time to Complete the Request Form</span>
         <span>1 mins 56 secs</span>
       </TitleContainer>
       <ProgressBarContainer>
-        <ProgressDiv></ProgressDiv>
-        <BackgroundDiv></BackgroundDiv>
+        <ProgressDiv $percentage={percentage} $color={color}></ProgressDiv>
+        <BackgroundDiv $isDarkMode={isDarkMode}></BackgroundDiv>
       </ProgressBarContainer>
     </MainContainer>
   );

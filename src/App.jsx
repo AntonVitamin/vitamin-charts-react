@@ -41,7 +41,7 @@ const App = () => {
   return (
     <div style={{backgroundColor: isDarkMode ? '#2C2D33' : '#FFF'}}>
       <ChartController chartConfig={chartConfig} isDarkMode={isDarkMode} />
-      <ProgressBar />
+      <ProgressBar percentage="50" color="blue" isDarkMode={isDarkMode} />
     </div>
   );
 };
