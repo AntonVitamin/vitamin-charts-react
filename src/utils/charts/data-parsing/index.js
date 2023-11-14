@@ -34,6 +34,7 @@ export const parseChartConfig = (chartConfig) => {
       }),
     },
     options: {
+      cutout: type === 'doughnut' ? '95%' : '0%',
       maintainAspectRatio: true,
       indexAxis: options?.horizontalDisplay ? 'y' : 'x',
       plugins: {
