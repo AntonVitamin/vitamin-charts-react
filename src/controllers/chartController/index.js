@@ -5,7 +5,7 @@ import {
   PieChart,
   DoughnutChart,
 } from '../../components/charts';
-import {parseChartConfig} from '../../utils/charts/data-parsing';
+import {parseChartConfig} from '../../utils/charts/parsing';
 import {ChartContainer, TitlesContainer, Title} from './styles';
 
 const renderChart = (chartConfig, isDarkMode) => {

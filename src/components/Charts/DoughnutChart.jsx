@@ -1,6 +1,6 @@
 import {Chart, ArcElement, Tooltip, Legend} from 'chart.js';
 import {Doughnut} from 'react-chartjs-2';
-import {setChartSharedDefaults} from '../../utils/charts/default-styles/setters';
+import {setChartSharedDefaults} from '../../utils/charts/defaults/setters';
 
 Chart.register(ArcElement, Tooltip, Legend);
 

@@ -1,4 +1,3 @@
-import {useEffect} from 'react';
 import {
   Chart,
   CategoryScale,
@@ -10,7 +9,7 @@ import {
   Legend,
 } from 'chart.js';
 import {Line} from 'react-chartjs-2';
-import {setChartSharedDefaults} from '../../utils/charts/default-styles/setters';
+import {setChartSharedDefaults} from '../../utils/charts/defaults/setters';
 
 Chart.register(
   CategoryScale,
