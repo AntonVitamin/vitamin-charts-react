@@ -105,3 +105,59 @@ export const parseChartConfig = (chartConfig) => {
     plugins: [options?.displayLegend ? htmlLegendPlugin : false],
   };
 };
+
+export const parseDoughnutChartConfig = (chartConfig) => {
+  const {type, labels, datasets} = chartConfig;
+
+  return {
+    type: type,
+    data: {
+      labels: labels,
+      datasets: datasets.map((item) => {
+        return {
+          backgroundColor: item.backgroundColor,
+          data: item.data,
+          borderWidth: 2,
+          borderColor: '#1A2036',
+        };
+      }),
+    },
+    options: {
+      cutout: '75%',
+      maintainAspectRatio: true,
+      plugins: {
+        legend: {
+          display: false,
+        },
+        // tooltip: {
+        //   callbacks: {
+        //     // adds info on the tooltip
+        //     footer: options?.tooltipFooter,
+        //   },
+        // },
+      },
+      scales: {
+        x: {
+          display: false,
+        },
+        y: {
+          display: false,
+        },
+      },
+    },
+  };
+};
+
+export const parseProgressBarData = (data) => {
+  const totalTime = data.datasets[0].data.reduce((a, b) => a + b);
+  return data.labels.map((item, index) => {
+    return {
+      title: item,
+      values: {
+        specific: data.datasets[0].data[index],
+        total: totalTime,
+      },
+      color: data.datasets[0].backgroundColor[index],
+    };
+  });
+};

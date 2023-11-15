@@ -66,3 +66,27 @@ export const progressBarData = [
     color: '#80CBC3',
   },
 ];
+
+export const performanceMetricsData = {
+  labels: [
+    'Time to Complete the Request Form',
+    'Dispatch Time',
+    'Response Time',
+    'Transit Time',
+    'Flight Time',
+    'Task Duration',
+  ],
+  datasets: [
+    {
+      data: [44, 116, 274, 245, 478, 711],
+      backgroundColor: [
+        '#DAE085',
+        '#D5B8FF',
+        '#BB86FC',
+        '#9875FF',
+        '#80B4FF',
+        '#80CBC3',
+      ],
+    },
+  ],
+};

@@ -1,6 +1,8 @@
 // import ChartController from './controllers/chartController';
-import ProgressBar from './components/metrics/ProgressBar';
-import {progressBarData} from './utils/data';
+import KeyPerformanceMetrics from './components/metrics/PerformanceMetrics';
+// import ProgressBar from './components/metrics/ProgressBar';
+// import {progressBarData} from './utils/data';
+import {performanceMetricsData} from './utils/data';
 
 const isDarkMode = true;
 
@@ -8,11 +10,11 @@ const App = () => {
   return (
     <div
       style={{
-        backgroundColor: isDarkMode ? '#1A2036' : '#FFF',
+        backgroundColor: isDarkMode ? '#030c29' : '#FFF',
         padding: '100px',
       }}>
       {/* <ChartController chartConfig={chartConfig} isDarkMode={isDarkMode} /> */}
-      {progressBarData.map((item) => {
+      {/* {progressBarData.map((item) => {
         return (
           <ProgressBar
             data={item}
@@ -20,7 +22,11 @@ const App = () => {
             key={`${item.color}-${item.title}`}
           />
         );
-      })}
+      })} */}
+      <KeyPerformanceMetrics
+        data={performanceMetricsData}
+        isDarkMode={isDarkMode}
+      />
     </div>
   );
 };

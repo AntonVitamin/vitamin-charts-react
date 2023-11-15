@@ -4,11 +4,11 @@ import {setChartSharedDefaults} from '../../utils/defaults/setters';
 
 Chart.register(ArcElement, Tooltip, Legend);
 
-const BarChart = ({chartConfig, isDarkMode}) => {
+const DoughnutChart = ({chartConfig, isDarkMode}) => {
   const {data, options, plugins} = chartConfig;
   setChartSharedDefaults(Chart, isDarkMode);
 
   return <Doughnut data={data} options={options} plugins={plugins} />;
 };
 
-export default BarChart;
+export default DoughnutChart;
