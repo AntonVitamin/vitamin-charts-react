@@ -11,7 +11,7 @@ export const MainContainer = styled.div`
 export const TitleContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 
   span {
     color: ${({$isDarkMode}) => ($isDarkMode ? '#FFF' : '#53565b')};
@@ -38,7 +38,7 @@ export const ProgressDiv = styled.div`
 
 export const BackgroundDiv = styled.div`
   background-color: ${({$isDarkMode}) =>
-    $isDarkMode ? 'darkgrey' : 'lightGrey'};
+    $isDarkMode ? '#222946' : 'lightGrey'};
   border-radius: 50px;
   height: 10px;
   position: absolute;
