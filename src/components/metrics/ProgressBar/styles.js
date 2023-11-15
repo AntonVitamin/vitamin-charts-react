@@ -5,6 +5,7 @@ export const MainContainer = styled.div`
   flex-direction: column;
   font-family: Abel, sans-serif;
   font-size: 16px;
+  margin: 50px 0;
   width: 50%;
 `;
 

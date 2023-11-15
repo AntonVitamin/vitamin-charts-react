@@ -1,22 +1,29 @@
 import {
   MainContainer,
   TitleContainer,
-  Title,
-  Data,
   ProgressBarContainer,
   ProgressDiv,
   BackgroundDiv,
 } from './styles';
 
-const ProgressBar = ({percentage, color, isDarkMode}) => {
+const calculatePercentage = (specific, total) => {
+  return (specific / total) * 100;
+};
+
+const ProgressBar = ({data, isDarkMode}) => {
+  const percentage = calculatePercentage(
+    data.values.specific,
+    data.values.total
+  );
+
   return (
     <MainContainer>
       <TitleContainer $isDarkMode={isDarkMode}>
-        <span>Time to Complete the Request Form</span>
-        <span>1 mins 56 secs</span>
+        <span>{data.title}</span>
+        <span>X mins Y secs</span>
       </TitleContainer>
       <ProgressBarContainer>
-        <ProgressDiv $percentage={percentage} $color={color}></ProgressDiv>
+        <ProgressDiv $percentage={percentage} $color={data.color}></ProgressDiv>
         <BackgroundDiv $isDarkMode={isDarkMode}></BackgroundDiv>
       </ProgressBarContainer>
     </MainContainer>
