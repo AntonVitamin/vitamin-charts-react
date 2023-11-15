@@ -9,7 +9,7 @@ import {
   Legend,
 } from 'chart.js';
 import {Line} from 'react-chartjs-2';
-import {setChartSharedDefaults} from '../../utils/charts/defaults/setters';
+import {setChartSharedDefaults} from '../../utils/defaults/setters';
 
 Chart.register(
   CategoryScale,

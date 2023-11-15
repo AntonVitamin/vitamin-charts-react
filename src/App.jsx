@@ -1,6 +1,6 @@
 // import ChartController from './controllers/chartController';
 import ProgressBar from './components/metrics/ProgressBar';
-import {progressBarData} from './utils/charts/data';
+import {progressBarData} from './utils/data';
 
 const isDarkMode = true;
 

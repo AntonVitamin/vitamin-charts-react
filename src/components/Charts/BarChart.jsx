@@ -12,7 +12,7 @@ import {Bar} from 'react-chartjs-2';
 import {
   setChartBarDefaults,
   setChartSharedDefaults,
-} from '../../utils/charts/defaults/setters';
+} from '../../utils/defaults/setters';
 
 Chart.register(
   CategoryScale,
