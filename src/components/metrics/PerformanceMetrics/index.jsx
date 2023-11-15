@@ -5,11 +5,13 @@ import {
   parseProgressBarData,
 } from '../../../utils/parsing';
 import {
-  BodyContainer,
+  Body,
   ChartContainer,
   ChartTitle,
-  HeaderContainer,
+  Header,
   MainContainer,
+  ProgressBarsContainer,
+  Title,
 } from './styles';
 
 const KeyPerformanceMetrics = ({data, isDarkMode}) => {
@@ -18,27 +20,32 @@ const KeyPerformanceMetrics = ({data, isDarkMode}) => {
 
   return (
     <MainContainer>
-      <h2>Key Performance Metrics</h2>
-      <HeaderContainer>
-        <ChartTitle>Total Time 9 mins 54 secs</ChartTitle>
-        <ChartContainer style={{width: '200px'}}>
-          <DoughnutChart
-            chartConfig={parsedDoughnutData}
-            isDarkMode={isDarkMode}
-          />
-        </ChartContainer>
-      </HeaderContainer>
-      <BodyContainer>
-        {parsedProgressBarsData.map((item) => {
-          return (
-            <ProgressBar
-              data={item}
+      <Title>Key Performance Metrics</Title>
+      <Body>
+        <Header>
+          <ChartTitle>
+            Total Time
+            <br />9 mins 54 secs
+          </ChartTitle>
+          <ChartContainer>
+            <DoughnutChart
+              chartConfig={parsedDoughnutData}
               isDarkMode={isDarkMode}
-              key={`${item.color}-${item.title}`}
             />
-          );
-        })}
-      </BodyContainer>
+          </ChartContainer>
+        </Header>
+        <ProgressBarsContainer>
+          {parsedProgressBarsData.map((item) => {
+            return (
+              <ProgressBar
+                data={item}
+                isDarkMode={isDarkMode}
+                key={`${item.color}-${item.title}`}
+              />
+            );
+          })}
+        </ProgressBarsContainer>
+      </Body>
     </MainContainer>
   );
 };

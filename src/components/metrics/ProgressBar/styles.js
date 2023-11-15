@@ -5,8 +5,7 @@ export const MainContainer = styled.div`
   flex-direction: column;
   font-family: Abel, sans-serif;
   font-size: 16px;
-  margin: 50px 0;
-  width: 50%;
+  padding: 16px 0;
 `;
 
 export const TitleContainer = styled.div`
@@ -16,22 +15,24 @@ export const TitleContainer = styled.div`
 
   span {
     color: ${({$isDarkMode}) => ($isDarkMode ? '#FFF' : '#53565b')};
+    font-size: 16px;
+    font-weight: 200;
   }
 
   & span:first-child {
-    margin-right: 10px;
+    margin-right: 15px;
   }
 `;
 
 export const ProgressBarContainer = styled.div`
-  height: 10px;
+  height: 5px;
   position: relative;
 `;
 
 export const ProgressDiv = styled.div`
   background-color: ${({$color}) => $color};
   border-radius: 50px 0 0 50px;
-  height: 10px;
+  height: 5px;
   position: absolute;
   width: ${({$percentage}) => `${$percentage}%`};
   z-index: 10;
@@ -41,7 +42,7 @@ export const BackgroundDiv = styled.div`
   background-color: ${({$isDarkMode}) =>
     $isDarkMode ? '#222946' : 'lightGrey'};
   border-radius: 50px;
-  height: 10px;
+  height: 5px;
   position: absolute;
   width: 100%;
   z-index: 5;
