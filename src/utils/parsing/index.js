@@ -43,6 +43,7 @@ export const parseChartConfig = (chartConfig) => {
         htmlLegend: {
           containerID: 'legend-container',
         },
+
         // tooltip: {
         //   // enabled: false,
         //   callbacks: {
@@ -106,7 +107,7 @@ export const parseChartConfig = (chartConfig) => {
 };
 
 export const parseLineChartConfig = (chartConfig) => {
-  const {labels, datasets} = chartConfig;
+  const {labels, datasets, options} = chartConfig;
 
   return {
     type: 'line',
@@ -115,11 +116,11 @@ export const parseLineChartConfig = (chartConfig) => {
       datasets: datasets.map((item) => {
         return {
           // generic
-          backgroundColor: item.gradient
+          backgroundColor: options?.gradient
             ? ({chart: {ctx}}) => {
                 const gradient = ctx.createLinearGradient(0, 0, 0, 200);
-                gradient.addColorStop(0, item.gradient[0]);
-                gradient.addColorStop(1, item.gradient[1]);
+                gradient.addColorStop(0, options?.gradient[0]);
+                gradient.addColorStop(1, options?.gradient[1]);
                 return gradient;
               }
             : item.backgroundColor,
@@ -141,12 +142,17 @@ export const parseLineChartConfig = (chartConfig) => {
         legend: {
           display: false,
         },
+        tooltip: {
+          mode: 'index',
+          intersect: false,
+        },
+      },
+      hover: {
+        mode: 'nearest',
+        intersect: true,
       },
       scales: {
         x: {
-          grid: {
-            drawTicks: false,
-          },
           ticks: {
             padding: 10,
           },
@@ -155,11 +161,11 @@ export const parseLineChartConfig = (chartConfig) => {
           grid: {
             drawTicks: false,
           },
-          min: 0,
-          max: 100,
+          min: options?.scale?.min,
+          max: options?.scale?.max,
           ticks: {
             padding: 10,
-            stepSize: 10,
+            stepSize: options?.scale?.stepSize,
           },
         },
       },

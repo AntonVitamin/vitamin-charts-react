@@ -18,6 +18,7 @@ import {
 
 const BatteryPerformance = ({data, isDarkMode}) => {
   const parsedChartConfig = parseLineChartConfig(data.chart);
+
   return (
     <MainContainer>
       <Title>Battery Performance</Title>

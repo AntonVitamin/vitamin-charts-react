@@ -118,10 +118,17 @@ export const batteryPerformanceData = {
         borderColor: '#48b6b8',
         data: [90, 90, 90, 88, 88, 86, 86, 84, 84],
         fill: true,
-        gradient: ['#48B6B820', '#FFFFFF20'],
         pointStyle: false,
         stepped: true,
       },
     ],
+    options: {
+      gradient: ['#48B6B820', '#FFFFFF20'],
+      scale: {
+        min: 0,
+        max: 100,
+        stepSize: 10,
+      },
+    },
   },
 };
