@@ -34,7 +34,6 @@ export const parseChartConfig = (chartConfig) => {
       }),
     },
     options: {
-      cutout: type === 'doughnut' ? '95%' : '0%',
       maintainAspectRatio: true,
       indexAxis: options?.horizontalDisplay ? 'y' : 'x',
       plugins: {
@@ -106,11 +105,73 @@ export const parseChartConfig = (chartConfig) => {
   };
 };
 
+export const parseLineChartConfig = (chartConfig) => {
+  const {labels, datasets} = chartConfig;
+
+  return {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: datasets.map((item) => {
+        return {
+          // generic
+          backgroundColor: item.gradient
+            ? ({chart: {ctx}}) => {
+                const gradient = ctx.createLinearGradient(0, 0, 0, 200);
+                gradient.addColorStop(0, item.gradient[0]);
+                gradient.addColorStop(1, item.gradient[1]);
+                return gradient;
+              }
+            : item.backgroundColor,
+          borderColor: item.borderColor,
+          borderWidth: item.borderWidth,
+          data: item.data,
+          label: item.label,
+          //line
+          fill: item.fill,
+          pointStyle: item.pointStyle,
+          stepped: item.stepped,
+          tension: item.tension,
+        };
+      }),
+    },
+    options: {
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+      scales: {
+        x: {
+          grid: {
+            drawTicks: false,
+          },
+          ticks: {
+            padding: 10,
+          },
+        },
+        y: {
+          grid: {
+            drawTicks: false,
+          },
+          min: 0,
+          max: 100,
+          ticks: {
+            padding: 10,
+            stepSize: 10,
+          },
+        },
+      },
+    },
+  };
+};
+
 export const parseDoughnutChartConfig = (chartConfig) => {
   const {type, labels, datasets} = chartConfig;
 
   return {
-    type: type,
+    type: 'doughnut',
     data: {
       labels: labels,
       datasets: datasets.map((item) => {

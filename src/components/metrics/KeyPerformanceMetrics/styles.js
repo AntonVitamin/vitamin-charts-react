@@ -39,10 +39,7 @@ export const ChartTitle = styled.span`
 `;
 
 export const ChartContainer = styled.div`
-  width: 40%;
-  canvas {
-    width: 100%;
-  }
+  width: 35%;
 `;
 
 export const ProgressBarsContainer = styled.div``;

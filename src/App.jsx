@@ -1,8 +1,9 @@
 // import ChartController from './controllers/chartController';
-import KeyPerformanceMetrics from './components/metrics/PerformanceMetrics';
+import BatteryPerformance from './components/metrics/BatteryPerformance';
+// import KeyPerformanceMetrics from './components/metrics/KeyPerformanceMetrics';
 // import ProgressBar from './components/metrics/ProgressBar';
 // import {progressBarData} from './utils/data';
-import {performanceMetricsData} from './utils/data';
+import {batteryPerformanceData} from './utils/data';
 
 const isDarkMode = true;
 
@@ -23,8 +24,12 @@ const App = () => {
           />
         );
       })} */}
-      <KeyPerformanceMetrics
+      {/* <KeyPerformanceMetrics
         data={performanceMetricsData}
+        isDarkMode={isDarkMode}
+      /> */}
+      <BatteryPerformance
+        data={batteryPerformanceData}
         isDarkMode={isDarkMode}
       />
     </div>

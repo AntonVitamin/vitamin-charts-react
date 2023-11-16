@@ -90,3 +90,38 @@ export const performanceMetricsData = {
     },
   ],
 };
+
+export const batteryPerformanceData = {
+  drone: {
+    model: 'DJI MAVIC 2EA',
+    station: 'HeroTech8',
+  },
+  flight: {
+    time: '7 mins 58 secs',
+    battery: {start: 90, end: 84},
+  },
+  chart: {
+    labels: [
+      '10:30',
+      '10:31',
+      '10:32',
+      '10:33',
+      '10:34',
+      '10:35',
+      '10:36',
+      '10:37',
+      '10:38',
+    ],
+    datasets: [
+      {
+        backgroundColor: '#48b6b8',
+        borderColor: '#48b6b8',
+        data: [90, 90, 90, 88, 88, 86, 86, 84, 84],
+        fill: true,
+        gradient: ['#48B6B820', '#FFFFFF20'],
+        pointStyle: false,
+        stepped: true,
+      },
+    ],
+  },
+};

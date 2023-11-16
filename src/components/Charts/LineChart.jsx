@@ -1,6 +1,7 @@
 import {
   Chart,
   CategoryScale,
+  Filler,
   LinearScale,
   PointElement,
   LineElement,
@@ -14,6 +15,7 @@ import {setChartSharedDefaults} from '../../utils/defaults/setters';
 Chart.register(
   CategoryScale,
   LinearScale,
+  Filler,
   PointElement,
   LineElement,
   Title,
