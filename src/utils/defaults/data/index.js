@@ -25,27 +25,3 @@ export const lightThemePalette = {
     background: '#63ABFD',
   },
 };
-
-export const defaultFonts = {
-  title: {
-    font: '',
-    size: 32,
-    style: '',
-  },
-  subtitle: {
-    font: '',
-    size: 20,
-    style: 'italic',
-  },
-  // ...xAxis, yAxis
-  labels: {
-    font: '',
-    size: 0,
-    style: '',
-  },
-  legend: {
-    font: '',
-    size: 0,
-    style: '',
-  },
-};

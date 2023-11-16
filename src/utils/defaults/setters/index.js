@@ -1,4 +1,4 @@
-import {lightThemePalette, darkThemePalette, defaultFonts} from '../data';
+import {lightThemePalette, darkThemePalette} from '../data';
 
 export const setChartBarDefaults = (chartInterface) => {
   // colours
